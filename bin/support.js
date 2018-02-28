@@ -9,7 +9,7 @@ const PORT = process.env.PORT ||  3000;
 /* edit below */
 const URL = process.env.URL || 'https://test-supportbot.herokuapp.com'
 const API_TOKEN = "515456377:AAGGb_hg5qpwpb4cWtjOmEz46FQZpoD8_Qs" // support bot
-var staff_chat = "SUPPORT_STAFF_GROUP_ID" // telegram staff group chat id
+var staff_chat = "-282866956" // telegram staff group chat id
 var owner_id = "492458005" // telgram owner id
 var supported_bot = "service_name" // service name of the supported bot
 var startCommandText = "Welcome in our support chat! Ask your question here."
