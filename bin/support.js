@@ -21,7 +21,6 @@ var ticketIDs = []
 var ticketSent = false
 var cron = require("cron");
 var userInfo = ""
-var mysql = require("mysql")
 var ticketStatus = {}
 var exec = require("child_process").exec
 var cronJob
