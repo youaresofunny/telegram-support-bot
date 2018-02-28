@@ -166,7 +166,7 @@ const downloadPhotoMiddleware = (ctx, next) => { // download photos
 
 bot.command("open", (ctx) => { // display open tickets
   ctx.getChat().then(function(chat) {
-    if (chat.id === staff_chat) {
+    if ((chat.id).toString() === staff_chat) {
       ctx.getChatAdministrators().then(function(admins) {
         admins = JSON.stringify(admins)
         if (admins.indexOf(ctx.from.id) > -1) {
@@ -189,7 +189,7 @@ bot.command("open", (ctx) => { // display open tickets
 
 bot.command("close", (ctx) => { // close ticket
   ctx.getChat().then(function(chat) {
-    if (chat.id === staff_chat) {
+    if ((chat.id).toString() === staff_chat) {
       ctx.getChatAdministrators().then(function(admins) {
         admins = JSON.stringify(admins)
         if (ctx.message.reply_to_message !== undefined && admins.indexOf(ctx.from.id) > -1) {
@@ -217,11 +217,8 @@ bot.on("photo", downloadPhotoMiddleware, (ctx, next) => { // send any received p
 
 bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins in staff_chat reply to those
   ctx.getChat().then(function(chat) {
-    console.log("chat id "+ chat.id+"staff id "+ staff_chat)
     if ((chat.id).toString() === staff_chat) {
-      console.log("chat id "+ chat.id)
       ctx.getChatAdministrators().then(function(admins) { // reply to users ticket
-        console.log("admins " + admins)
         admins = JSON.stringify(admins)
         if (ctx.message.reply_to_message !== undefined && admins.indexOf(ctx.from.id) > -1) {
           try {
