@@ -21,24 +21,7 @@ is a support bot for telegram bots, using the Telegraf framework (by [@dotcypres
 
 ## Installation
 
-Install Node ( > 6.2 ) and npm ( > 5 ).
-
-```js
-git clone https://github.com/bostrot/telegram-support-bot.git
-cd telegram-support-bot
-sudo bash setup
-```
-
-Without setup
-```js
-npm install telegraf
-npm install cron
-git clone https://github.com/bostrot/telegram-support-bot.git
-cd telegram-support-bot
-sudo bash setup 
-```
-Enter the bot location (ex. /home/bots/mybot.js) when asked and then your bot name (ex. mybot)
-`setup` will create two systemctl links in order that your bot will be automatically restarted when it crashes and runs in the background.
+Choose buildpack heroku/nodejs. Deploy your own fork with the config filled in on your Heroku app. 
 
 ## Configuration
 
@@ -48,18 +31,13 @@ You need to set your bot token and chat ids in `bin/support.js`:
 
 ```js
 /* edit below */
-const bot = new Telegraf('BOT_TOKEN_SUPPORT_BOT') // support bot token
-var staff_chat = 'SUPPORT_STAFF_GROUP_ID' // telegram staff group chat id
-var owner_id = 'OWNER_ID' // telgram owner id
-var supported_bot = 'service_name' // service name of the supported bot
-var startCommandText = 'Welcome in our support chat! Ask your question here.'
-var faqCommandText = 'Check out our FAQ here: https://bitgram.pro/index.php/bitgram-faq'
-var con = mysql.createConnection({ // only needed if you want to get user info from a mysql database with /id command
-  host: 'HOST',
-  user: 'USR',
-  password: 'PWD',
-  database: 'DB'
-})
+const URL = process.env.URL || 'https://YOURAPP.herokuapp.com'
+const API_TOKEN = "YOUR_BOT_TOKEN" // support bot
+var staff_chat = "YOUR_STAFF_CHAT_ID" // telegram staff group chat id
+var owner_id = "YOUR_ID" // telgram owner id
+var supported_bot = "service_name" // service name of the supported bot
+var startCommandText = "Welcome in our support chat! Ask your question here."
+var faqCommandText = "Check out our FAQ here: Address to your FAQ"
 /* edit end */
 ```
 
