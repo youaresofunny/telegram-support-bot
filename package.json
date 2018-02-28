@@ -12,7 +12,7 @@
     "bugs": {
       "url": "https://github.com/bostrot/telegram-support-bot/issues"
     },
-    "main": "telegraf.js",
+    "main": "bin/support.js",
     "scripts": {
       "lint": "eslint .",
       "test": "ava test",
@@ -24,7 +24,8 @@
     "dependencies": {
       "debug": "^3.0.0",
       "node-fetch": "^2.0.0",
-      "sandwich-stream": "^1.0.0"
+      "sandwich-stream": "^1.0.0",
+      "telegraf": "^3.18.0"
     },
     "devDependencies": {
       "ava": "^0.25.0",
