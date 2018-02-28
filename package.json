@@ -16,7 +16,8 @@
     "scripts": {
       "lint": "eslint .",
       "test": "ava test",
-      "precommit": "npm run lint && npm test"
+      "precommit": "npm run lint && npm test",
+      "start": "node bin/support.js"
     },
     "engines": {
       "node": ">=6.2.0"
