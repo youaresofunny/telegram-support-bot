@@ -166,8 +166,8 @@ const downloadPhotoMiddleware = (ctx, next) => { // download photos
 
 bot.command("open", (ctx) => { // display open tickets
   ctx.getChat().then(function(chat) {
-      console.log("chatid", (chat.id).toString())
     if ((chat.id).toString() === staff_chat) {
+      console.log("chatid", (chat.id).toString())
       ctx.getChatAdministrators().then(function(admins) {
         admins = JSON.stringify(admins)
         if (admins.indexOf(ctx.from.id) > -1) {
@@ -246,6 +246,7 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
       }
       ticketStatus[ticketID] = true
       if (ticketSent === false) {
+        console.log("ticketSent false")
         ctx.reply("Thank you for contacting us. We will answer as soon as possible.")
         userInfo = ""
         userInfo += "</b> from " + ctx.message.from.first_name + " "
