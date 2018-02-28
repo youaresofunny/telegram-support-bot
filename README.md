@@ -22,6 +22,7 @@ is a support bot for telegram bots, using the Telegraf framework (by [@dotcypres
 ## Installation
 
 Choose buildpack heroku/nodejs. Deploy your own fork with the config filled in on your Heroku app. 
+You can get your ID by writing /id to the bot. The first ID will be yours and the second (including the minus) will be the group ID.
 
 ## Configuration
 
