@@ -238,7 +238,7 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
           } catch (e) {}
         }
       }).catch(function(noAdmin) {
-
+        console.log("Error with admins: " + noAdmin)
       })
     } else if (chat.type === "private") { // creating ticket
       ticketID = ctx.message.from.id
