@@ -3,8 +3,11 @@ const {
   Extra, Markup
 } = Telegraf
 
+const PORT = 3000;
+
 /* edit below */
-const bot = new Telegraf("BOT_TOKEN_SUPPORT_BOT") // support bot
+const URL = 'https://test-supportbot.herokuapp.com'
+const API_TOKEN = "515456377:AAGGb_hg5qpwpb4cWtjOmEz46FQZpoD8_Qs" // support bot
 var staff_chat = "SUPPORT_STAFF_GROUP_ID" // telegram staff group chat id
 var owner_id = "OWNER_ID" // telgram owner id
 var supported_bot = "service_name" // service name of the supported bot
@@ -12,6 +15,7 @@ var startCommandText = "Welcome in our support chat! Ask your question here."
 var faqCommandText = "Check out our FAQ here: Address to your FAQ"
 /* edit end */
 
+const bot = new Telegraf(API_TOKEN) 
 var ticketID
 var ticketIDs = []
 var ticketSent = false
@@ -128,7 +132,8 @@ var ex = function execute(command, callback) { // execute command
 bot.command("start", ({ // on start reply with chat bot rules
   reply, from, chat
 }) => {
-  reply(startCommandText, html)
+  reply(from.id)
+  //reply(startCommandText, html)
 })
 
 bot.command("faq", (ctx) => { // faq
@@ -261,4 +266,5 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
     }
   })
 })
-bot.startPolling()
+bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
+bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
