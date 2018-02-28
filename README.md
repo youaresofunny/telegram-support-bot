@@ -42,6 +42,8 @@ Enter the bot location (ex. /home/bots/mybot.js) when asked and then your bot na
 
 ## Configuration
 
+The support staff group needs to be a supergroup. In this group every administrator can reply tickets.
+
 You need to set your bot token and chat ids in `bin/support.js`:
 
 ```js
