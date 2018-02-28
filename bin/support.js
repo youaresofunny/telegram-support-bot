@@ -180,7 +180,7 @@ bot.command("open", (ctx) => { // display open tickets
             }
           }
           setTimeout(function() {
-            ctx.reply("<b>Open Tickets:\n\n</b>" + openTickets, noSound)
+            bot.telegram.sendMessage(chat.id, "<b>Open Tickets:\n\n</b>" + openTickets, noSound)
           }, 10)
         }
       })
@@ -247,7 +247,7 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
       ticketStatus[ticketID] = true
       if (ticketSent === false) {
         console.log("ticketSent false")
-        ctx.reply("Thank you for contacting us. We will answer as soon as possible.")
+        bot.telegram.sendMessage(chat.id, "Thank you for contacting us. We will answer as soon as possible.")
         userInfo = ""
         userInfo += "</b> from " + ctx.message.from.first_name + " "
         userInfo += "@" + ctx.message.from.username + " Language: " + ctx.message.from.language_code + "\n\n"
