@@ -138,7 +138,7 @@ bot.command("start", ({ // on start reply with chat bot rules
 bot.command("id", ({
   reply, from, chat
 }) => {
-  reply(from.id)
+  reply(from.id+ " " + chat.id)
 })
 bot.command("faq", (ctx) => { // faq
   ctx.reply(faqCommandText)
