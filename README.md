@@ -59,6 +59,14 @@ Admin/Owner commands:
 
 <img src="https://puu.sh/wywe5/a4c3cee0b7.png" width="400" height="400" />
 
+## Help
+
+You are welcome to contribute with pull requests, bug reports, ideas and donations.
+
+Bitcoin: 18MQaV4zHEf1EY3ZmuUjdnXbfZxDNiyMhy
+
+PayPal: paypal.me/bostrot
+
 ## Telegram token
 
 To use the [Telegram Bot API](https://core.telegram.org/bots/api), 
