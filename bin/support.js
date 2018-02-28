@@ -217,6 +217,7 @@ bot.on("photo", downloadPhotoMiddleware, (ctx, next) => { // send any received p
 
 bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins in staff_chat reply to those
   ctx.getChat().then(function(chat) {
+    console.log("chat id "+ chat.id+"staff id "+ staff_chat)
     if (chat.id === staff_chat) {
       console.log("chat id "+ chat.id)
       ctx.getChatAdministrators().then(function(admins) { // reply to users ticket
