@@ -217,11 +217,11 @@ bot.on("photo", downloadPhotoMiddleware, (ctx, next) => { // send any received p
 
 bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins in staff_chat reply to those
   ctx.getChat().then(function(chat) {
-  console.log("chat id "+ chat.id)
     if (chat.id === staff_chat) {
+      console.log("chat id "+ chat.id)
       ctx.getChatAdministrators().then(function(admins) { // reply to users ticket
-        admins = JSON.stringify(admins)
         console.log("admins " + admins)
+        admins = JSON.stringify(admins)
         if (ctx.message.reply_to_message !== undefined && admins.indexOf(ctx.from.id) > -1) {
           try {
             var replyText = ctx.message.reply_to_message.text;
