@@ -145,8 +145,7 @@ bot.command("faq", (ctx) => { // faq
 })
 
 bot.command("root", (ctx) => { // admin dashboard can only be used by owner
-  console.log("id", ctx.from.id)
-  if (ctx.from.id === owner_id) {
+  if ((ctx.from.id).toString() === owner_id) {
     bot.telegram.sendMessage(staff_chat, "You will receive the logs when the bot crashes.", root)
     cronSession(ctx)
   }
