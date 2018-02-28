@@ -132,10 +132,14 @@ var ex = function execute(command, callback) { // execute command
 bot.command("start", ({ // on start reply with chat bot rules
   reply, from, chat
 }) => {
-  reply(from.id)
-  //reply(startCommandText, html)
+  reply(startCommandText, html)
 })
 
+bot.command("id", ({
+  reply, from, chat
+}) => {
+  reply(from.id)
+})
 bot.command("faq", (ctx) => { // faq
   ctx.reply(faqCommandText)
 })
