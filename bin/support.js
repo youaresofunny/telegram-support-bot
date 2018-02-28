@@ -9,7 +9,7 @@ const PORT = process.env.PORT ||  3000;
 /* edit below */
 const URL = process.env.URL || 'https://test-supportbot.herokuapp.com'
 const API_TOKEN = "515456377:AAGGb_hg5qpwpb4cWtjOmEz46FQZpoD8_Qs" // support bot
-var staff_chat = "-282866956" // telegram staff group chat id
+var staff_chat = "282866956" // telegram staff group chat id
 var owner_id = "492458005" // telgram owner id
 var supported_bot = "service_name" // service name of the supported bot
 var startCommandText = "Welcome in our support chat! Ask your question here."
@@ -271,6 +271,5 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
     }
   })
 })
-console.log("Starting Webhook on Port 3000... " + API_TOKEN + " " + URL)
 bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
 bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
