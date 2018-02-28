@@ -166,6 +166,7 @@ const downloadPhotoMiddleware = (ctx, next) => { // download photos
 
 bot.command("open", (ctx) => { // display open tickets
   ctx.getChat().then(function(chat) {
+      console.log("chatid", (chat.id).toString())
     if ((chat.id).toString() === staff_chat) {
       ctx.getChatAdministrators().then(function(admins) {
         admins = JSON.stringify(admins)
