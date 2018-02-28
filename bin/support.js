@@ -221,6 +221,7 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
     if (chat.id === staff_chat) {
       ctx.getChatAdministrators().then(function(admins) { // reply to users ticket
         admins = JSON.stringify(admins)
+        console.log("admins " + admins)
         if (ctx.message.reply_to_message !== undefined && admins.indexOf(ctx.from.id) > -1) {
           try {
             var replyText = ctx.message.reply_to_message.text;
