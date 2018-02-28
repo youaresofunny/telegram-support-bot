@@ -1,3 +1,4 @@
+console.log("Starting Bot...")
 const Telegraf = require("telegraf") // thanks for the great framwork! @dotcypress
 const {
   Extra, Markup
@@ -265,5 +266,6 @@ bot.hears(/(.+)/, (ctx) => { // creates a ticket for users and let group admins 
     }
   })
 })
+console.log("Starting Webhook on Port 3000... " + API_TOKEN + " " + URL)
 bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
 bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
