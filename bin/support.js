@@ -4,6 +4,8 @@ const config = require('../config.js');
 const handler = require('./ticket_handler.js');
 let cache = require('./cache.js');
 
+console.log('Token!', config.bot_token)
+
 const bot = new Telegraf(config.bot_token);
 
 const cron = require('cron');
